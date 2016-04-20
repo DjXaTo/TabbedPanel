@@ -57,17 +57,15 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtResultado" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtSumando1" min="-2" pref="158" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtSumando2" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtarriba" min="-2" pref="158" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtabajo" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -84,12 +82,12 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtSumando1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtarriba" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtSumando2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtabajo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="btnSumar" pref="61" max="32767" attributes="0"/>
@@ -115,9 +113,9 @@
                 <Property name="text" type="java.lang.String" value="Sumando 2:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtSumando1">
+            <Component class="javax.swing.JFormattedTextField" name="txtarriba">
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtSumando2">
+            <Component class="javax.swing.JFormattedTextField" name="txtabajo">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
@@ -137,6 +135,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="+"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSumarActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -157,7 +158,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnGenerarRandom" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jLabel5" min="-2" pref="182" max="-2" attributes="0"/>
+                              <Component id="numeroaleatorio" min="-2" pref="182" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="193" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -169,7 +170,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="numeroaleatorio" min="-2" pref="22" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnGenerarRandom" min="-2" pref="127" max="-2" attributes="0"/>
                       <EmptySpace pref="94" max="32767" attributes="0"/>
@@ -178,7 +179,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="numeroaleatorio">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Aqu&#xed; se generara el n&#xfa;mero random"/>
               </Properties>
@@ -187,6 +188,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Generar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarRandomActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

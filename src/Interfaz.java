@@ -1,3 +1,6 @@
+
+import java.text.DecimalFormat;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,10 +14,17 @@
 public class Interfaz extends javax.swing.JFrame {
 
     /**
-     * Creates new form interfaz
+     * declaración de variables. Hemos utilizado un decimal format, para que
+     * a la hora de sumar y generar numeros aleatorios no sean tan grandes
+     * decimalmente y lo hemos decicido poner siempre en numeros naturales
      */
+    private double numarriba;
+    private double numabajo;
+    private double random;
+    DecimalFormat f = new DecimalFormat("0");
+
     public Interfaz() {
-        initComponents();
+       initComponents();
     }
 
     /**
@@ -30,13 +40,13 @@ public class Interfaz extends javax.swing.JFrame {
         panelSuma = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtSumando1 = new javax.swing.JFormattedTextField();
-        txtSumando2 = new javax.swing.JFormattedTextField();
+        txtarriba = new javax.swing.JFormattedTextField();
+        txtabajo = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
         txtResultado = new javax.swing.JLabel();
         btnSumar = new javax.swing.JButton();
         panelGenerador = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        numeroaleatorio = new javax.swing.JLabel();
         btnGenerarRandom = new javax.swing.JButton();
         panelSubpaneles = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -54,6 +64,11 @@ public class Interfaz extends javax.swing.JFrame {
         txtResultado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnSumar.setText("+");
+        btnSumar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelSumaLayout = new javax.swing.GroupLayout(panelSuma);
         panelSuma.setLayout(panelSumaLayout);
@@ -66,15 +81,14 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(txtResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(panelSumaLayout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtSumando1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelSumaLayout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtSumando2))))
+                    .addGroup(panelSumaLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtarriba, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelSumaLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtabajo)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSumar, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                 .addContainerGap())
@@ -87,11 +101,11 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(panelSumaLayout.createSequentialGroup()
                         .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(txtSumando1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtarriba, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(txtSumando2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnSumar, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -102,9 +116,14 @@ public class Interfaz extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Suma", panelSuma);
 
-        jLabel5.setText("Aquí se generara el número random");
+        numeroaleatorio.setText("Aquí se generara el número random");
 
         btnGenerarRandom.setText("Generar");
+        btnGenerarRandom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarRandomActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelGeneradorLayout = new javax.swing.GroupLayout(panelGenerador);
         panelGenerador.setLayout(panelGeneradorLayout);
@@ -115,7 +134,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(panelGeneradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnGenerarRandom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelGeneradorLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(numeroaleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 193, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -123,7 +142,7 @@ public class Interfaz extends javax.swing.JFrame {
             panelGeneradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGeneradorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(numeroaleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGenerarRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(94, Short.MAX_VALUE))
@@ -184,6 +203,35 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
+        /**
+         * Las variables que creamos anteriormente (numarriba y numabajo), reco
+         * je automatimente lo que escribamos en el textshield y los convierte
+         * a double. Por ultimo al textshield de resultado le hacemos un set
+         * de la suma de numarriba y numabajo
+         */
+        numarriba = Double.parseDouble(txtarriba.getText());
+        numabajo = Double.parseDouble(txtabajo.getText());
+        
+        txtResultado.setText(String.valueOf(f.format(numarriba+numabajo)));
+        
+        
+    }//GEN-LAST:event_btnSumarActionPerformed
+
+    private void btnGenerarRandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarRandomActionPerformed
+        /*
+        * Utilizamos math random en el action performed del boton generar, para
+        * que genero numero aleatorios hasta un maximo de 10000 que le hemos y
+        * se lo asignamos a la variable random, luego le hacemos al texshield 
+        * de arriba la asignacion de la variable random
+        */
+        
+         random = Math.random()*10000;
+         numeroaleatorio.setText(String.valueOf(f.format(random)));
+         
+        
+    }//GEN-LAST:event_btnGenerarRandomActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -226,16 +274,16 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JLabel numeroaleatorio;
     private javax.swing.JPanel panelGenerador;
     private javax.swing.JPanel panelSub1;
     private javax.swing.JPanel panelSub2;
     private javax.swing.JPanel panelSubpaneles;
     private javax.swing.JPanel panelSuma;
     private javax.swing.JLabel txtResultado;
-    private javax.swing.JFormattedTextField txtSumando1;
-    private javax.swing.JFormattedTextField txtSumando2;
+    private javax.swing.JFormattedTextField txtabajo;
+    private javax.swing.JFormattedTextField txtarriba;
     // End of variables declaration//GEN-END:variables
 }
