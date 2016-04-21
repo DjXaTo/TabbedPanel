@@ -76,7 +76,7 @@ public class Interfaz extends javax.swing.JFrame {
             panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSumaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelSumaLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
@@ -84,7 +84,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(panelSumaLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(txtarriba, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtarriba, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
                     .addGroup(panelSumaLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
@@ -97,21 +97,22 @@ public class Interfaz extends javax.swing.JFrame {
             panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSumaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelSumaLayout.createSequentialGroup()
                         .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(txtarriba, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtarriba))
                         .addGap(18, 18, 18)
                         .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(txtabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnSumar, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                            .addComponent(txtabajo))
+                        .addGap(19, 19, 19))
+                    .addComponent(btnSumar, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addGroup(panelSumaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                     .addComponent(txtResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGap(165, 165, 165))
         );
 
         jTabbedPane1.addTab("Suma", panelSuma);
@@ -132,10 +133,8 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(panelGeneradorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelGeneradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGenerarRandom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panelGeneradorLayout.createSequentialGroup()
-                        .addComponent(numeroaleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 193, Short.MAX_VALUE)))
+                    .addComponent(btnGenerarRandom, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                    .addComponent(numeroaleatorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panelGeneradorLayout.setVerticalGroup(
@@ -145,7 +144,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(numeroaleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGenerarRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Generador de números random", panelGenerador);
@@ -158,10 +157,10 @@ public class Interfaz extends javax.swing.JFrame {
         );
         panelSub1Layout.setVerticalGroup(
             panelSub1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 244, Short.MAX_VALUE)
+            .addGap(0, 282, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab1", panelSub1);
+        jTabbedPane2.addTab("Subpanel 1", panelSub1);
 
         javax.swing.GroupLayout panelSub2Layout = new javax.swing.GroupLayout(panelSub2);
         panelSub2.setLayout(panelSub2Layout);
@@ -171,10 +170,10 @@ public class Interfaz extends javax.swing.JFrame {
         );
         panelSub2Layout.setVerticalGroup(
             panelSub2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 244, Short.MAX_VALUE)
+            .addGap(0, 282, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab2", panelSub2);
+        jTabbedPane2.addTab("Subpanel 2", panelSub2);
 
         javax.swing.GroupLayout panelSubpanelesLayout = new javax.swing.GroupLayout(panelSubpaneles);
         panelSubpaneles.setLayout(panelSubpanelesLayout);
